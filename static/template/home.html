@@ -1,0 +1,13 @@
+<h1>Hello world!</h1>
+
+<h2>已使用:
+  {{ (quota.used/(1024*1024*1024)).toFixed(0) }}/{{ quota.total/(1024*1024*1024) }}G
+</h2>
+<a href="javascript:;" ng-if="quota&&!fileList" ng-click="getList()">查列表</a>
+
+<ul>
+  <li ng-repeat="item in fileList">
+    {{ item.path }}
+  </li>
+</ul>
+
